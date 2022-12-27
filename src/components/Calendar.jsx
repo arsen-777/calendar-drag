@@ -30,34 +30,36 @@ const Calendar = () => {
   };
 
   return (
-    <div className="days">
-      {days.map((day) => (
-        <Droppable
-          className="droppable"
-          types={['event']}
-          key={day.id}
-          onDrop={({ event }) => onDrop(event, day)}
-        >
-          <div className="day">
-            <p> {day.day}</p>
-            <div className="drag-block">
-              {dropData[day?.id] &&
-                dropData[day?.id].map((el) => (
-                  <div className="item" key={el.id}>
-                    {el?.startDate}:{el?.endDate}
-                    <span
-                      className="spn"
-                      onClick={() => removeEvent(el.id, day.id)}
-                    >
-                      x
-                    </span>
-                  </div>
-                ))}
+    <div className="container">
+      <div className="days">
+        {days.map((day) => (
+          <Droppable
+            className="droppable"
+            types={['event']}
+            key={day.id}
+            onDrop={({ event }) => onDrop(event, day)}
+          >
+            <div className="day">
+              <p> {day.day}</p>
+              <div className="drag-block">
+                {dropData[day?.id] &&
+                  dropData[day?.id].map((el) => (
+                    <div className="item" key={el.id}>
+                      {el?.startDate}:{el?.endDate}
+                      <span
+                        className="spn"
+                        onClick={() => removeEvent(el.id, day.id)}
+                      >
+                        x
+                      </span>
+                    </div>
+                  ))}
+              </div>
             </div>
-          </div>
-        </Droppable>
-      ))}
-      <div></div>
+          </Droppable>
+        ))}
+        <div></div>
+      </div>
     </div>
   );
 };
