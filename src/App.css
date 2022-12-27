@@ -1,3 +1,10 @@
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  background-color: aqua;
+}
+
 .event-block {
   width: 100%;
   display: flex;
@@ -6,26 +13,57 @@
 }
 
 .event {
+  width: 100%;
   border: 1px solid silver;
+  border-radius: 10px;
   background-color: rgb(201, 199, 199);
 }
 
 .days {
   width: 100%;
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin: 0 auto;
+  justify-content: space-evenly;
   margin-top: 50px;
 }
 
 .day {
-  flex: 1 20%;
-  height: auto;
-  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  flex-flow: column;
+}
+.day > p {
+  width: 25px;
+  height: 25px;
+  display: flex;
+  justify-content: center;
+  border: 2px solid blue;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-top: 5px;
+  font-weight: bold;
 }
 
 .drag-block {
   display: flex;
   flex-flow: wrap;
+}
+
+.droppable {
+  width: 130px;
+  height: 70px;
+  display: flex;
+  flex-flow: column;
+  overflow-y: scroll;
+  border: 4px solid rgb(188, 116, 116);
+  border-radius: 4px;
+  background-color: cornflowerblue;
+}
+.item {
+  font-size: 18px;
+  border-bottom: 1px solid silver;
+}
+.spn {
+  color: red;
+  cursor: pointer;
+  margin-left: 5px;
 }
